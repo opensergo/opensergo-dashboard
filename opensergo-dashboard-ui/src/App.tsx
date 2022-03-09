@@ -12,14 +12,14 @@ import AppList from "./AppList";
 
 const Nav = () => (
     <ConsoleMenu>
-        <ConsoleMenu.Item key="aaaa"><Link to="/a">aaaa</Link></ConsoleMenu.Item>
+        {/*<ConsoleMenu.Item key="aaaa"><Link to="/a">aaaa</Link></ConsoleMenu.Item>*/}
         <ConsoleMenu.Item key="AppList"><Link to="/AppList">应用列表</Link></ConsoleMenu.Item>
-        <ConsoleMenu.SubMenu key="log" label="日志">
-            <ConsoleMenu.Item key="access-log">访问日志</ConsoleMenu.Item>
-            <ConsoleMenu.Item key="load-log">负载日志</ConsoleMenu.Item>
-        </ConsoleMenu.SubMenu>
-        <ConsoleMenu.Item key="help">产品帮助</ConsoleMenu.Item>
-        <ConsoleMenu.Item key="api-docs">API 文档</ConsoleMenu.Item>
+        {/*<ConsoleMenu.SubMenu key="log" label="日志">*/}
+        {/*    <ConsoleMenu.Item key="access-log">访问日志</ConsoleMenu.Item>*/}
+        {/*    <ConsoleMenu.Item key="load-log">负载日志</ConsoleMenu.Item>*/}
+        {/*</ConsoleMenu.SubMenu>*/}
+        {/*<ConsoleMenu.Item key="help">产品帮助</ConsoleMenu.Item>*/}
+        {/*<ConsoleMenu.Item key="api-docs">API 文档</ConsoleMenu.Item>*/}
     </ConsoleMenu>
 );
 
@@ -38,4 +38,3 @@ function App() {
 }
 
 export default App;
-
