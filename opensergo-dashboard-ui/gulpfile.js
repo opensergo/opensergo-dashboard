@@ -4,7 +4,7 @@ const open = require('open');
 const app = {
   srcPath: 'app/', // 源代码
   devPath: 'tmp/', // 开发打包
-  prdPath: 'legacy.dist/' // 生产打包
+  prdPath: 'build/' // 生产打包
 };
 
 const JS_LIBS = [
@@ -59,6 +59,15 @@ const JS_APP = [
   'app/scripts/services/gateway/api_service.js',
   'app/scripts/services/gateway/flow_service.js',
 ];
+gulp.task('html', async function () {
+  gulp.src("legacy.index.html")
+    .pipe(gulp.dest(app.prdPath));
+});
+
+gulp.task('copy-lib', async function () {
+  gulp.src("lib/**/*")
+    .pipe(gulp.dest(app.prdPath + "/lib/"));
+});
 
 gulp.task('lib', async function () {
   gulp.src(JS_LIBS)
@@ -94,6 +103,15 @@ gulp.task('js', async function () {
     .pipe(gulp.dest(app.prdPath + 'js'))
     .pipe(plugins.connect.reload());
 });
+gulp.task('copy-app-js', async function () {
+  gulp.src("app/**/*")
+    .pipe(gulp.dest(app.prdPath + 'app'));
+});
+
+gulp.task('copy-assets', async function () {
+  gulp.src("assets/**/*")
+    .pipe(gulp.dest(app.prdPath + 'assets'));
+});
 
 /*
 * js任务
@@ -107,12 +125,12 @@ gulp.task('jshint', async function () {
 
 // 每次发布的时候，可能需要把之前目录内的内容清除，避免旧的文件对新的容有所影响。 需要在每次发布前删除dist和build目录
 gulp.task('clean', async function () {
-  gulp.src([app.devPath, app.prdPath],{allowEmpty: true })
+  gulp.src([app.devPath, app.prdPath], {allowEmpty: true})
     .pipe(plugins.clean());
 });
 
 // 总任务
-gulp.task('build', gulp.series('clean', 'jshint', 'lib', 'js', 'css'));
+gulp.task('build', gulp.series('jshint', 'lib', 'copy-lib', 'js', 'copy-app-js', 'css', 'copy-assets', 'html'));
 
 // 服务
 gulp.task('serve', gulp.series('build', function () {
