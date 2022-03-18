@@ -16,7 +16,7 @@
 package com.alibaba.csp.sentinel.dashboard.controller.application;
 
 import com.alibaba.csp.sentinel.dashboard.domain.Result;
-import com.alibaba.csp.sentinel.dashboard.domain.application.ApplicationEntity;
+import com.alibaba.opensergo.dashboard.domain.application.ApplicationEntity;
 import com.alibaba.csp.sentinel.dashboard.service.application.ApplicationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

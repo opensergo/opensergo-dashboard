@@ -1,12 +1,11 @@
 package com.alibaba.csp.sentinel.dashboard.service.application;
 
-import com.alibaba.csp.sentinel.dashboard.domain.application.ApplicationEntity;
-import com.alibaba.csp.sentinel.dashboard.repository.application.ApplicationRepository;
+import com.alibaba.opensergo.dashboard.domain.application.ApplicationEntity;
+import com.alibaba.opensergo.dashboard.repository.application.ApplicationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 @Service

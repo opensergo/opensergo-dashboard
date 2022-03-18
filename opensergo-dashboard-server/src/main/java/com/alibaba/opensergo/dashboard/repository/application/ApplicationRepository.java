@@ -1,6 +1,6 @@
-package com.alibaba.csp.sentinel.dashboard.repository.application;
+package com.alibaba.opensergo.dashboard.repository.application;
 
-import com.alibaba.csp.sentinel.dashboard.domain.application.ApplicationEntity;
+import com.alibaba.opensergo.dashboard.domain.application.ApplicationEntity;
 import org.springframework.data.repository.Repository;
 
 import java.util.Optional;

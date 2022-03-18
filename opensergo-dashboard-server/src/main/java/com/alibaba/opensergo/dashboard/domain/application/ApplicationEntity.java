@@ -1,4 +1,4 @@
-package com.alibaba.csp.sentinel.dashboard.domain.application;
+package com.alibaba.opensergo.dashboard.domain.application;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
