@@ -1,4 +1,4 @@
-package com.alibaba.opensergo.dashboard.domain.application;
+package io.opensergo.dashboard.domain.application;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -11,14 +11,10 @@ import org.springframework.data.relational.core.mapping.Table;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table("metadata")
-public class MetadataEntity {
+@Table("application")
+public class ApplicationEntity {
     @Id
     private Long id;
 
-    private String sha512;
-
-    private String appName;
-
-    private String metadata;
+    private String name;
 }

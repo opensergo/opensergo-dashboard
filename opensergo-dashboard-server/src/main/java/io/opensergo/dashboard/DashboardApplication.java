@@ -1,4 +1,4 @@
-package com.alibaba.opensergo.dashboard;
+package io.opensergo.dashboard;
 
 import com.alibaba.csp.sentinel.init.InitExecutor;
 
@@ -12,7 +12,7 @@ import org.springframework.context.annotation.ComponentScan;
  * @author luyanbo
  */
 @ComponentScan(basePackages = {
-        "com.alibaba.opensergo.dashboard",
+        "io.opensergo.dashboard",
         "com.alibaba.csp.sentinel.dashboard"
 })
 @SpringBootApplication

@@ -1,6 +1,6 @@
-package com.alibaba.opensergo.dashboard.repository.application;
+package io.opensergo.dashboard.repository.application;
 
-import com.alibaba.opensergo.dashboard.domain.application.ApplicationEntity;
+import io.opensergo.dashboard.domain.application.ApplicationEntity;
 import org.springframework.data.repository.Repository;
 
 import java.util.Optional;
