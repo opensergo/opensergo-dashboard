@@ -20,6 +20,8 @@ import com.alibaba.csp.sentinel.dashboard.discovery.MachineInfo;
 import com.alibaba.csp.sentinel.dashboard.domain.Result;
 import com.alibaba.csp.sentinel.util.StringUtil;
 import com.google.common.net.InetAddresses;
+import io.opensergo.dashboard.repository.application.ApplicationRepository;
+import io.opensergo.dashboard.service.application.ApplicationService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,6 +39,9 @@ public class MachineRegistryController {
 
     @Autowired
     private AppManagement appManagement;
+
+    @Autowired
+    private ApplicationService applicationService;
 
     @ResponseBody
     @RequestMapping("/machine")
@@ -77,6 +82,9 @@ public class MachineRegistryController {
             machineInfo.setLastHeartbeat(System.currentTimeMillis());
             machineInfo.setVersion(sentinelVersion);
             appManagement.addMachine(machineInfo);
+
+            applicationService.createApplication(app);
+
             return Result.ofSuccessMsg("success");
         } catch (Exception e) {
             logger.error("Receive heartbeat error", e);
