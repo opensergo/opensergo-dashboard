@@ -23,9 +23,9 @@ ReactDOM.render(
                         alt=""/>
                 },
                 menus: [{
-                    key: 'b-a',
-                    label: '备案',
-                    href: '/b-a'
+                    // key: 'b-a',
+                    // label: '备案',
+                    // href: '/b-a'
                 }],
                 account: null,
                 // account: {

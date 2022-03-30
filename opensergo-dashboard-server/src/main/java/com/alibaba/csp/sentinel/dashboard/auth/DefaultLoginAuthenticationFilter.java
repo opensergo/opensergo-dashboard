@@ -52,7 +52,7 @@ public class DefaultLoginAuthenticationFilter implements LoginAuthenticationFilt
     /**
      * Some urls which needn't auth, such as /auth/login, /registry/machine and so on.
      */
-    @Value("#{'${auth.filter.exclude-urls}'.split(',')}")
+    @Value("${auth.filter.exclude-urls}")
     private List<String> authFilterExcludeUrls;
 
     /**
