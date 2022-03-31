@@ -60,7 +60,7 @@ const JS_APP = [
   'app/scripts/services/gateway/flow_service.js',
 ];
 gulp.task('html', async function () {
-  gulp.src("legacy.index.html")
+  gulp.src("sentinel.html")
     .pipe(gulp.dest(app.prdPath));
 });
 

@@ -59,12 +59,12 @@
                         </configuration>
                     </execution>
                     <execution>
-                        <id>npm run legacy.build</id>
+                        <id>npm run sentinel.build</id>
                         <goals>
                             <goal>npm</goal>
                         </goals>
                         <configuration>
-                            <arguments>run legacy.build</arguments>
+                            <arguments>run sentinel.build</arguments>
                         </configuration>
                     </execution>
                 </executions>
