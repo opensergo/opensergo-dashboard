@@ -1,5 +1,7 @@
 # OpenSergo 控制台
 
+[![License: Apache-2.0](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0.txt)
+
 您可以在 OpenSergo 的控制台上查看、修改您的服务信息、服务治理配置。
 
 ## 快速开始

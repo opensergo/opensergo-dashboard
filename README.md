@@ -1,5 +1,7 @@
 # OpenSergo Dashboard
 
+[![License: Apache-2.0](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0.txt)
+
 You can view and modify your service information and service governance configuration on the OpenSergo dashboard.
 
 ## Quick Start
