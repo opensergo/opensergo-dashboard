@@ -6,7 +6,7 @@
     <parent>
         <groupId>io.opensergo</groupId>
         <artifactId>opensergo-dashboard</artifactId>
-        <version>1.0.0-SNAPSHOT</version>
+        <version>0.0.1</version>
     </parent>
 
     <artifactId>opensergo-dashboard-server</artifactId>
@@ -23,8 +23,8 @@
         <dependency>
             <groupId>io.opensergo</groupId>
             <artifactId>opensergo-dashboard-ui</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
-            <scope>import</scope>
+            <version>0.0.1</version>
+            <scope>provided</scope>
             <type>pom</type>
         </dependency>
         <dependency>
@@ -234,7 +234,9 @@
                 </configuration>
             </plugin>
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-resources-plugin</artifactId>
+                <version>3.2.0</version>
                 <executions>
                     <execution>
                         <id>copy frontend content</id>
