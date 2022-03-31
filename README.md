@@ -20,3 +20,9 @@ You can view and modify your service information and service governance configur
 1. Download code, and execute `mvn clean package -Dmaven.test.skip=true -Prelease`
 2. `opensergo-dashboard-distribution/target/opensergo-dashboard-${version}.zip` is the release package
 3. Extract the package, and execute `opensergo-dashboard-${version}/bin/startup.sh`
+
+## Community
+
+[DingTalk Group](https://page.dingtalk.com/wow/dingtalk/act/en-home): `34826335`
+
+<img src="image/dingtalk-group.jpg" width="300" />

@@ -20,3 +20,9 @@
 1. 下载代码后，执行`mvn clean package -Dmaven.test.skip=true -Prelease`
 2. `opensergo-dashboard-distribution/target/opensergo-dashboard-${version}.zip`即为打包好的文件
 3. 解压后执行其中的`opensergo-dashboard-${version}/bin/startup.sh`即可启动
+
+## 社区
+
+[钉钉群](https://www.dingtalk.com/): `34826335`
+
+<img src="image/dingtalk-group.jpg" width="300" />
