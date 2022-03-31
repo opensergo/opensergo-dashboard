@@ -1,5 +1,7 @@
 # OpenSergo 控制台
 
+[![License: Apache-2.0](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0.txt)
+
 您可以在 OpenSergo 的控制台上查看、修改您的服务信息、服务治理配置。
 
 ## 快速开始
@@ -18,3 +20,9 @@
 1. 下载代码后，执行`mvn clean package -Dmaven.test.skip=true -Prelease`
 2. `opensergo-dashboard-distribution/target/opensergo-dashboard-${version}.zip`即为打包好的文件
 3. 解压后执行其中的`opensergo-dashboard-${version}/bin/startup.sh`即可启动
+
+## 社区
+
+[钉钉群](https://www.dingtalk.com/): `34826335`
+
+<img src="image/dingtalk-group.jpg" width="300" />
