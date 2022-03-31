@@ -1,6 +1,10 @@
 # OpenSergo Dashboard
 
+[![Releases](https://img.shields.io/github/downloads/opensergo/opensergo-dashboard/total.svg)](https://github.com/opensergo/opensergo-dashboard/releases)
 [![License: Apache-2.0](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+[中文](./README.zh-Hans.md)
+
 
 You can view and modify your service information and service governance configuration on the OpenSergo dashboard.
 
