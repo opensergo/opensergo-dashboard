@@ -1,0 +1,43 @@
+#spring settings
+server:
+  servlet:
+    encoding:
+      charset: UTF-8
+      force: true
+      enabled: true
+
+    #cookie name setting
+    session:
+      cookie:
+        name: sentinel_dashboard_cookie
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/opensergo?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+    username: root
+    password:
+
+#logging settings
+logging:
+  level:
+    org.springframework.web: INFO
+  file:
+    name: ${user.home}/logs/csp/sentinel-dashboard.log
+  pattern:
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+#logging.pattern.console= %d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n
+
+#auth settings
+auth:
+  filter:
+    exclude-urls: /,/sentinel,/auth/login,/auth/logout,/registry/machine,/version,/api/application/**
+    exclude-url-suffixes: htm,html,js,css,map,ico,ttf,woff,png
+  # If auth.enabled=false, Sentinel console disable login
+  username: sentinel
+  password: sentinel
+
+# Inject the dashboard version. It's required to enable
+# filtering in pom.xml for this resource file.
+sentinel:
+  dashboard:
+    version: @project.version@
