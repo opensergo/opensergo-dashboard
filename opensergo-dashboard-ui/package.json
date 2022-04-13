@@ -20,7 +20,7 @@
     "@alicloud/console-base-rc-top-nav": "^1.10.1",
     "@alicloud/console-components": "^1.5.1",
     "@alicloud/console-components-app-layout": "^1.1.4",
-    "@alicloud/console-components-console-menu": "^1.2.11",
+    "@alicloud/console-components-console-menu": "^1.2.12",
     "@alicloud/console-components-page": "^1.0.18",
     "@alicloud/console-components-table": "^1.0.21",
     "@alicloudfe/components-console-menu": "^1.1.0",
@@ -55,7 +55,6 @@
     "oclazyload": "^1.1.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-router-dom": "^5.3.0",
     "react-scripts": "^4.0.3",
     "selectize": "^0.12.1",
     "styled-components": "^4.3.2"

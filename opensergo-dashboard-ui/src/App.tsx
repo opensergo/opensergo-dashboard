@@ -1,26 +1,25 @@
 import React from 'react';
 import './App.css';
-import ConsoleMenu from "@alicloud/console-components-console-menu";
-import {Button, Message} from "@alicloud/console-components";
+import {IRoutableItemDescriptor} from "@alicloud/console-components-console-menu";
+import RoutableMenu from "@alicloud/console-components-console-menu/lib/RoutableMenu";
 import AppLayout from "@alicloud/console-components-app-layout";
-import Page from '@alicloud/console-components-page'
 
 
 import "@alicloud/console-components/dist/wind.css";
-import {Link, Switch, Route} from "dva/router";
+import {Redirect, Route, Switch} from "dva/router";
 import AppList from "./AppList";
 
+
+const items: IRoutableItemDescriptor[] = [
+    // {key: '/home', to: '/', label: '概览'},
+    {key: '/application', to: '/application', label: '应用列表'},
+];
+
 const Nav = () => (
-    <ConsoleMenu>
-        {/*<ConsoleMenu.Item key="aaaa"><Link to="/a">aaaa</Link></ConsoleMenu.Item>*/}
-        <ConsoleMenu.Item key="AppList"><Link to="/AppList">应用列表</Link></ConsoleMenu.Item>
-        {/*<ConsoleMenu.SubMenu key="log" label="日志">*/}
-        {/*    <ConsoleMenu.Item key="access-log">访问日志</ConsoleMenu.Item>*/}
-        {/*    <ConsoleMenu.Item key="load-log">负载日志</ConsoleMenu.Item>*/}
-        {/*</ConsoleMenu.SubMenu>*/}
-        {/*<ConsoleMenu.Item key="help">产品帮助</ConsoleMenu.Item>*/}
-        {/*<ConsoleMenu.Item key="api-docs">API 文档</ConsoleMenu.Item>*/}
-    </ConsoleMenu>
+    <RoutableMenu
+        items={items}
+        defaultActiveKey={'/application'}
+    />
 );
 
 function App() {
@@ -29,8 +28,11 @@ function App() {
             nav={<Nav/>}
         >
             <Switch>
-                <Route path="/AppList">
+                <Route path="/application">
                     <AppList/>
+                </Route>
+                <Route path="/">
+                    <Redirect to={'/application'}/>
                 </Route>
             </Switch>
         </AppLayout>
