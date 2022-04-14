@@ -9,6 +9,8 @@
 
 ## 快速开始
 
+本项目依赖 Java 11 && Maven >= 3.6.0。
+
 1. 下载代码：`git clone https://github.com/opensergo/opensergo-dashboard.git`
 2. 在`opensergo-dashboard-server/src/main/resources/application.yaml`中指定mysql的地址
     * mysql的表结构见 [opensergo-dashboard-server/src/main/resources/schema.sql](./opensergo-dashboard-server/src/main/resources/schema.sql)

@@ -10,6 +10,8 @@ You can view and modify your service information and service governance configur
 
 ## Quick Start
 
+This project requires Java 11 && Maven >= 3.6.0.
+
 1. Download code: `git clone https://github.com/opensergo/opensergo-dashboard.git`
 2. Modify `opensergo-dashboard-server/src/main/resources/application.yaml`, specify the mysql server address
     * Table struct: [opensergo-dashboard-server/src/main/resources/schema.sql](./opensergo-dashboard-server/src/main/resources/schema.sql)

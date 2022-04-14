@@ -10,4 +10,4 @@ OpenSergo Dashboard前端使用了React和Console Design。
 
 ### Console Design支持群
 
-![钉钉群](./ding-group.jpg)
+<img src="./ding-group.jpg" width="300" />
