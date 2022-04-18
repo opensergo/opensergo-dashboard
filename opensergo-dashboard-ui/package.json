@@ -1,6 +1,6 @@
 {
   "name": "opensergo-dashboard-ui",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -12,8 +12,13 @@
     "eject": "react-scripts eject"
   },
   "homepage": "/",
-  "author": "x-cold <lxstart@outlook.com>",
-  "license": "MIT",
+  "author": "Robert Lu <robert.lyb@alibaba-inc.com>",
+  "license": " Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/opensergo/opensergo-dashboard.git",
+    "directory": "opensergo-dashboard-ui"
+  },
   "proxy": "http://localhost:8080",
   "dependencies": {
     "@alicloud/console-base-conf-locale": "^1.5.45",
