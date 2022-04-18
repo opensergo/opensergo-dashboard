@@ -19,7 +19,7 @@ ReactDOM.render(
                 logo: {
                     label: <img
                         src={logo}
-                        height="100%"
+                        height="25%"
                         alt=""/>
                 },
                 menus: [{
