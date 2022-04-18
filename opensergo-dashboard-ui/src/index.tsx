@@ -11,11 +11,6 @@ ReactDOM.render(
         <div className="App">
             <TopNav {...{
                 id: 'consoleBaseTopbarRoot',
-                // dock: {
-                //     onClick() {
-                //         console.info('只有含 onXx 或 href 才可以展示');
-                //     }
-                // },
                 logo: {
                     label: <img
                         src={logo}

@@ -8,6 +8,7 @@ import AppLayout from "@alicloud/console-components-app-layout";
 import "@alicloud/console-components/dist/wind.css";
 import {Redirect, Route, Switch} from "dva/router";
 import AppList from "./AppList";
+import AppDetail from "./page/AppDetail";
 
 
 const items: IRoutableItemDescriptor[] = [
@@ -24,18 +25,26 @@ const Nav = () => (
 
 function App() {
     return (
-        <AppLayout
-            nav={<Nav/>}
-        >
-            <Switch>
-                <Route path="/application">
-                    <AppList/>
-                </Route>
-                <Route path="/">
-                    <Redirect to={'/application'}/>
-                </Route>
-            </Switch>
-        </AppLayout>
+        <Switch>
+            <Route path="/application/:appName">
+                <AppDetail />
+            </Route>
+            <Route path="/">
+                <AppLayout
+                    nav={<Nav/>}
+                >
+                    <Switch>
+                        <Route path="/application">
+                            <AppList/>
+                        </Route>
+                        <Route path="/">
+                            <Redirect to={'/application'}/>
+                        </Route>
+                    </Switch>
+                </AppLayout>
+
+            </Route>
+        </Switch>
     );
 }
 

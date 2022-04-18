@@ -24,6 +24,7 @@
     "@alicloud/console-base-conf-locale": "^1.5.45",
     "@alicloud/console-base-rc-top-nav": "^1.10.1",
     "@alicloud/console-components": "^1.5.1",
+    "@alicloud/console-components-actions": "^1.0.19",
     "@alicloud/console-components-app-layout": "^1.1.4",
     "@alicloud/console-components-console-menu": "^1.2.12",
     "@alicloud/console-components-page": "^1.0.18",
