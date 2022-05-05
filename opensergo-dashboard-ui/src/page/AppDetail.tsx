@@ -1,74 +1,50 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { useParams } from 'dva/router'
+
 import Page from "@alicloud/console-components-page";
 import Table from "@alicloud/console-components-table";
-import {Badge, Button} from "@alicloud/console-components";
-import {LinkButton} from "@alicloud/console-components-actions";
+import { Badge, Button } from "@alicloud/console-components";
+import { LinkButton } from "@alicloud/console-components-actions";
+
 
 const AppDetail: React.FC<{}> = () => {
-    const [appList, setAppList] = useState([]);
+    console.log("useParams", useParams);
+    const params = useParams();
+    console.log("params", params);
+
+    const [appItem, setAppItem] = useState("");
     useEffect(() => {
         fetchAppList();
     }, []);
     // 这个是分页接口，但是需要拿到全部数据
     const fetchAppList = async () => {
-        const data = await axios.get('/api/application/getApplicationList')
+        const data = await axios.get('/api/application/describeApplication', { params: { appName: 'example-spring-cloud' } })
             .then(function (response) {
-                return response?.data?.data;
+                return response?.data;
             });
-        setAppList(data);
+        setAppItem(data.appName);
     };
 
     return (
         <Page>
-            <Page.Header title="应用列表"/>
+            <Page.Header title="应用详情" />
             <Page.Content>
-                <Table
-                    exact
-                    fixedBarExpandWidth={[24]}
-                    affixActionBar
-                    dataSource={appList}
-                    primaryKey="appName"
-                    search={{
-                        filter: [
-                            {
-                                value: 'AppName',
-                                label: '应用名称',
-                            },
-                        ],
-                        defaultValue: 'AppName',
-                    }}
-                    pagination={{
-                        current: 1,
-                        total: 80,
-                        pageSize: 20,
-                    }}
-                    selection={({selectedRowKeys}: any) => (
-                        <>
-                            <Badge count={selectedRowKeys.length}>
-                                <Button disabled={selectedRowKeys.length === 0}>
-                                    Delete
-                                </Button>
-                            </Badge>
-                        </>
-                    )}
-                >
-                    <Table.Column title="应用名" cell={render} width={200}/>
-                </Table>
+                {appItem}
             </Page.Content>
         </Page>
     )
 }
 
 
-const render = (value :any, index:any, record:any) => {
+const render = (value: any, index: any, record: any) => {
     console.log(value, index, record);
     return (
         <LinkButton
             href={`https://baidu.com`}
-            // onClick={() => {
-            //     alert("on click");
-            // }}
+        // onClick={() => {
+        //     alert("on click");
+        // }}
         >
             {record.appName}
         </LinkButton>
