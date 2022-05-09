@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { Badge, Button, Icon, Select } from '@alicloud/console-components';
-import Actions, { LinkButton } from "@alicloud/console-components-actions";
+import { Button } from '@alicloud/console-components';
+import { LinkButton } from "@alicloud/console-components-actions";
 import Page from '@alicloud/console-components-page';
 import Table from '@alicloud/console-components-table';
 import type { TableProps } from '@alicloud/console-components/types/table';
 import axios from 'axios';
-import { Link } from 'dva/router'
+import { Link, useHistory } from 'dva/router'
 
 
 const rowSelection: TableProps['rowSelection'] & {
@@ -17,25 +17,33 @@ const rowSelection: TableProps['rowSelection'] & {
 }
 
 const AppList: React.FC<{}> = () => {
+    const history = useHistory();
+
+    const [loading, setLoading] = useState(true);
+
     const [appList, setAppList] = useState([]);
     useEffect(() => {
         fetchAppList();
     }, []);
     // TODO need to support paging
     const fetchAppList = async () => {
+        setLoading(true);
         const data = await axios.get('/api/application/getApplicationList')
             .then(function (response) {
                 return response?.data?.data;
             });
         setAppList(data);
+        setLoading(false);
     };
 
     const Operation = () => (
         <>
             <Button
-            //  type="primary"
-             >
-                应用接入🚧
+                onClick={() => {
+                    history.push("/integration");
+                }}
+            >
+                应用接入
             </Button>
             <Button onClick={fetchAppList}>刷新</Button>
         </>
@@ -46,6 +54,7 @@ const AppList: React.FC<{}> = () => {
             <Page.Header title="应用列表" />
             <Page.Content>
                 <Table
+                    loading={loading}
                     exact
                     fixedBarExpandWidth={[24]}
                     affixActionBar

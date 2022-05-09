@@ -1,4 +1,3 @@
-import React from 'react';
 import './App.css';
 import { IRoutableItemDescriptor } from "@alicloud/console-components-console-menu";
 import RoutableMenu from "@alicloud/console-components-console-menu/lib/RoutableMenu";
@@ -9,11 +8,13 @@ import "@alicloud/console-components/dist/wind.css";
 import { Redirect, Route, Switch } from "dva/router";
 import AppList from "./AppList";
 import AppDetail from "./page/AppDetail";
+import Integration from './page/Integration';
 
 
 const items: IRoutableItemDescriptor[] = [
     // {key: '/home', to: '/', label: '概览'},
     { key: '/application', to: '/application', label: '应用列表' },
+    { key: '/integration', to: '/integration', label: '接入中心' },
 ];
 
 const Nav = () => (
@@ -30,16 +31,19 @@ function App() {
         >
             <Switch>
                 <Route path="/application/detail">
-                    <AppDetail  />
+                    <AppDetail />
                 </Route>
                 <Route path="/application/service">
-                    <AppDetail  />
+                    <AppDetail />
                 </Route>
                 <Route exact path="/application">
                     <AppList />
                 </Route>
                 <Route exact path="/application">
                     <AppList />
+                </Route>
+                <Route exact path="/integration">
+                    <Integration />
                 </Route>
                 <Route path="/">
                     <Redirect to={'/application'} />

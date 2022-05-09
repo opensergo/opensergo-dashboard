@@ -1,0 +1,47 @@
+.integration-card {
+    width: 120px;
+    height: 120px;
+    padding: 4px 8px;
+    padding-top: 10px;
+    background-color: #FAFAFA;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 12px;
+    margin-left: 0px;
+    // box-shadow: 0 1px 4px 0 rgba(0, 0, 0, .13);
+    // border: 1px solid transparent;
+    background-color: #fff;
+    border: 1px solid #DEDEDE;
+    .integration-icon {
+        width: 56px;
+        height: 56px;
+    }
+
+    &__name {
+        font-size: 12px;
+        text-align: center;
+        flex: 1;
+        display: flex;
+        align-items: center;
+    }
+
+    &:hover {
+        text-decoration: none !important;
+        cursor: pointer;
+        border: 1px solid #0070CC;
+        box-shadow: 0 2px 8px 0 rgba(0,112,204,0.08);
+        background-color: #FFFFFF;
+    }
+    
+    &--disabled {
+        &:hover {
+            cursor: not-allowed;
+            background-color: #FAFAFA;
+        }
+        cursor: not-allowed;
+        & > * {
+            opacity: 0.2;
+        }
+    }
+}
