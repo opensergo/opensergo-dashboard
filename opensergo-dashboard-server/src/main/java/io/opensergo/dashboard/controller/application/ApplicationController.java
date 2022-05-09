@@ -1,6 +1,7 @@
 package io.opensergo.dashboard.controller.application;
 
 import com.alibaba.csp.sentinel.dashboard.domain.PagedResult;
+import com.alibaba.csp.sentinel.dashboard.domain.Result;
 import io.opensergo.dashboard.domain.application.ApplicationEntity;
 import io.opensergo.dashboard.repository.application.ApplicationRepository;
 import io.opensergo.dashboard.vo.application.ApplicationItem;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 /**
  * @author luyanbo
@@ -37,5 +39,20 @@ public class ApplicationController {
             appItemList.add(appItem);
         }
         return PagedResult.ofSuccess(appItemList);
+    }
+
+    @GetMapping("/describeApplication")
+    public Result<ApplicationItem> describeApplication(
+            HttpServletRequest request,
+            String appName
+    ) {
+        Optional<ApplicationEntity> appEntity = applicationRepository.findByName(appName);
+        if (appEntity.isPresent()) {
+            ApplicationItem appItem = new ApplicationItem();
+            appItem.setAppName(appEntity.get().getName());
+            appItem.setSha256(appEntity.get().getSha256());
+            return Result.ofSuccess(appItem);
+        }
+        return Result.ofSuccess(null);
     }
 }

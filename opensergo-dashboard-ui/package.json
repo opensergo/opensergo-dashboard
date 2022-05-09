@@ -1,6 +1,6 @@
 {
   "name": "opensergo-dashboard-ui",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -12,16 +12,23 @@
     "eject": "react-scripts eject"
   },
   "homepage": "/",
-  "author": "x-cold <lxstart@outlook.com>",
-  "license": "MIT",
+  "author": "Robert Lu <robert.lyb@alibaba-inc.com>",
+  "license": " Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/opensergo/opensergo-dashboard.git",
+    "directory": "opensergo-dashboard-ui"
+  },
   "proxy": "http://localhost:8080",
   "dependencies": {
     "@alicloud/console-base-conf-locale": "^1.5.45",
     "@alicloud/console-base-rc-top-nav": "^1.10.1",
     "@alicloud/console-components": "^1.5.1",
+    "@alicloud/console-components-actions": "^1.0.19",
     "@alicloud/console-components-app-layout": "^1.1.4",
     "@alicloud/console-components-console-menu": "^1.2.12",
     "@alicloud/console-components-page": "^1.0.18",
+    "@alicloud/console-components-slide-panel": "^2.2.14",
     "@alicloud/console-components-table": "^1.0.21",
     "@alicloudfe/components-console-menu": "^1.1.0",
     "@types/node": "^16.11.25",
@@ -47,7 +54,7 @@
     "axios": "^0.26.1",
     "bootstrap-switch": "^3.3.4",
     "bootstrap-tagsinput": "~0.7.1",
-    "dva": "^2.4.1",
+    "dva": "^2.6.0-beta.20",
     "lodash": "^4.17.15",
     "moment": "^2.12.0",
     "ng-dialog": "^0.6.6",
@@ -56,6 +63,7 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "^4.0.3",
+    "sass": "^1.51.0",
     "selectize": "^0.12.1",
     "styled-components": "^4.3.2"
   },

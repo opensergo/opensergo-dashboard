@@ -13,10 +13,11 @@ public class ApplicationService {
     @Autowired
     private ApplicationRepository applicationRepository;
 
-    public void createApplication(String appName) {
+    public void createApplication(String appName, String sha256) {
         ApplicationEntity app = applicationRepository.findByName(appName).orElseGet(() ->
                 ApplicationEntity.builder()
                         .name(appName)
+                        .sha256(sha256)
                         .build()
         );
         applicationRepository.save(app);

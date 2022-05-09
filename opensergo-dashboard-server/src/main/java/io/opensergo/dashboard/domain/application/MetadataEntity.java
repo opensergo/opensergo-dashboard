@@ -16,7 +16,7 @@ public class MetadataEntity {
     @Id
     private Long id;
 
-    private String sha512;
+    private String sha256;
 
     private String appName;
 

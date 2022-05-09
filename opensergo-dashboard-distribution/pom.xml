@@ -14,12 +14,6 @@
     <dependencies>
         <dependency>
             <groupId>io.opensergo</groupId>
-            <artifactId>opensergo-dashboard-ui</artifactId>
-            <version>${project.version}</version>
-            <type>pom</type>
-        </dependency>
-        <dependency>
-            <groupId>io.opensergo</groupId>
             <artifactId>opensergo-dashboard-server</artifactId>
             <version>${project.version}</version>
         </dependency>

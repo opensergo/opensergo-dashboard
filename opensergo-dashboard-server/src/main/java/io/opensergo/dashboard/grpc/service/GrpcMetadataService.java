@@ -2,7 +2,6 @@ package io.opensergo.dashboard.grpc.service;
 
 import com.google.protobuf.util.JsonFormat;
 import io.grpc.stub.StreamObserver;
-import io.opensergo.dashboard.domain.application.ApplicationEntity;
 import io.opensergo.dashboard.domain.application.MetadataEntity;
 import io.opensergo.dashboard.repository.application.MetadataRepository;
 import io.opensergo.dashboard.service.application.ApplicationService;
@@ -43,17 +42,17 @@ public class GrpcMetadataService extends MetadataServiceGrpc.MetadataServiceImpl
 
         log.info("reportMetadata request: {}", metadata);
 
-        applicationService.createApplication(appName);
-        recordMetadata(appName, metadataEntity, metadata);
+        metadataEntity = recordMetadata(appName, metadataEntity, metadata);
+        applicationService.createApplication(appName, metadataEntity.getSha256());
 
         responseObserver.onNext(ReportMetadataReply.newBuilder().build());
         responseObserver.onCompleted();
     }
 
-    private void recordMetadata(String appName, MetadataEntity metadataEntity, String metadata) {
+    private MetadataEntity recordMetadata(String appName, MetadataEntity metadataEntity, String metadata) {
         metadataEntity.setAppName(appName);
         metadataEntity.setMetadata(metadata);
-        metadataEntity.setSha512(DigestUtils.sha512Hex(metadata));
-        metadataRepository.save(metadataEntity);
+        metadataEntity.setSha256(DigestUtils.sha256Hex(metadata));
+        return metadataRepository.save(metadataEntity);
     }
 }
