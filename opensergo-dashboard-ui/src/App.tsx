@@ -29,10 +29,16 @@ function App() {
             nav={<Nav />}
         >
             <Switch>
-                <Route path="/application/:appName">
+                <Route path="/application/detail">
                     <AppDetail  />
                 </Route>
-                <Route path="/application">
+                <Route path="/application/service">
+                    <AppDetail  />
+                </Route>
+                <Route exact path="/application">
+                    <AppList />
+                </Route>
+                <Route exact path="/application">
                     <AppList />
                 </Route>
                 <Route path="/">

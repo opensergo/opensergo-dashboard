@@ -17,4 +17,6 @@ public class ApplicationEntity {
     private Long id;
 
     private String name;
+
+    private String sha256;
 }

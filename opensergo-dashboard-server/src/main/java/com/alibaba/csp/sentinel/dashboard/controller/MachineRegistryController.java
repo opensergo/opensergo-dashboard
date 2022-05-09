@@ -20,7 +20,6 @@ import com.alibaba.csp.sentinel.dashboard.discovery.MachineInfo;
 import com.alibaba.csp.sentinel.dashboard.domain.Result;
 import com.alibaba.csp.sentinel.util.StringUtil;
 import com.google.common.net.InetAddresses;
-import io.opensergo.dashboard.repository.application.ApplicationRepository;
 import io.opensergo.dashboard.service.application.ApplicationService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -83,7 +82,7 @@ public class MachineRegistryController {
             machineInfo.setVersion(sentinelVersion);
             appManagement.addMachine(machineInfo);
 
-            applicationService.createApplication(app);
+            applicationService.createApplication(app, "");
 
             return Result.ofSuccessMsg("success");
         } catch (Exception e) {

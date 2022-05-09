@@ -50,6 +50,7 @@ public class ApplicationController {
         if (appEntity.isPresent()) {
             ApplicationItem appItem = new ApplicationItem();
             appItem.setAppName(appEntity.get().getName());
+            appItem.setSha256(appEntity.get().getSha256());
             return Result.ofSuccess(appItem);
         }
         return Result.ofSuccess(null);
